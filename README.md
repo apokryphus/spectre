@@ -6,7 +6,7 @@ Next Gen Game Overhaul With Ghost Mode Characteristics
  - Remove `mod_EH_Shared_Imports` if `modSharedImports` already exists.
 - Run https://www.nexusmods.com/witcher3/mods/7171 for mod menu.
 
-Copy the following keybinds configuration at the beginning of the "input.settings" file, located in your
+- Copy the following keybinds configuration at the beginning of the "input.settings" file, located in your
 documents\The Witcher 3 folder:
 
 --- copy below this line----
@@ -34,8 +34,8 @@ IK_LeftMouse=(Action=IngredientSelectionRequest)
 
 --- copy above this line----
 
-Failure to do this step will prevent you from correctly interacting with Alchemy.
-Important: It may be necessary to set the "Read Only" attribute of the file after copying, to prevent the game
+- Failure to do this step will prevent you from correctly interacting with Alchemy.
+- Important: It may be necessary to set the "Read Only" attribute of the file after copying, to prevent the game
 from overwriting the changes made.
 
 The above keybinds will correlate to these buttons/actions in-game:
