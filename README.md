@@ -1,5 +1,5 @@
 ![spectre](https://github.com/user-attachments/assets/f348e704-7525-457a-8164-e32809758585)
-Next Gen Game Overhaul With Ghost Mode Characteristics for The Witcher 3
+Next gen game overhaul for The Witcher 3 based upon Ghost Mode.
 
 ## Installation
 - Drag and drop folders into TW3 installation folder.
