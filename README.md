@@ -1,10 +1,19 @@
 ![spectre](https://github.com/user-attachments/assets/f348e704-7525-457a-8164-e32809758585)
-Next gen game overhaul for The Witcher 3 based upon Ghost Mode.
+Next gen overhaul built upon concepts and design choices of Ghost Mode and Alchemy. 
 
 ## Installation
-- Drag and drop folders into TW3 installation folder.
- - Remove `mod_EH_Shared_Imports` if `modSharedImports` already exists.
-- Run https://www.nexusmods.com/witcher3/mods/7171 for mod menu.
+### Manual Installation
+- Click on this [link (CLICK ME)](https://github.com/apokryphus/spectre/releases/latest).
+- Download the zip file. 
+- First link under `Assets`. 
+- Do not download the source code.
+- Drag and drop all 3 folders in the zip file (dlc, mods, and bin) into your Witcher 3 installation folder.
+- Check the files ```bin\config\r4game\user_config_matrix\pc\dx11filelist.txt``` and ```bin\config\r4game\user_config_matrix\pc\dx12filelist.txt```
+- Add `000Spectre.xml;` to the very bottom of both files if it does not exist. 
+
+### Post-Installation
+- Remove `mod_EH_Shared_Imports` if `modSharedImports` already exists.
+- Use [this (CLICK ME)](https://www.nexusmods.com/witcher3/mods/7171) for the mod menu.
 - Copy the following keybinds configuration at the beginning of the `input.settings` file, located in your
 `Documents\The Witcher 3` folder:
 
