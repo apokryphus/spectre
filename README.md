@@ -13,6 +13,7 @@ Next gen overhaul built upon concepts and design choices of Ghost Mode and Alche
 
 ### Post-Installation
 - Remove `mod_EH_Shared_Imports` if `modSharedImports` already exists.
+- Merge any unmerged scripts with script merger. Ignore xml conflicts.
 - Use [this (CLICK ME)](https://www.nexusmods.com/witcher3/mods/7171) for the mod menu.
 - Copy the following keybinds configuration and paste them at the beginning of the `input.settings` file, located in your
 `Documents\The Witcher 3` folder:
