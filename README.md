@@ -195,7 +195,7 @@ from overwriting the changes made.
 
 The above keybinds will correlate to these buttons/actions in-game:
 
-(M & Keyboard)    |   (Controller)
+```(M & Keyboard)    |   (Controller)```
 
 	L				L2 + R3		-> Tap to enter meditation position.
 	L				L2 + R3		-> Hold ~0.5 seconds and release to enter the meditation position AND build a fire.
