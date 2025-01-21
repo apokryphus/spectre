@@ -253,22 +253,50 @@
 
 @addMethod(W3GameParams) function GetEnemyHealthMult() : float
 {
-	return StringToFloat(theGame.GetInGameConfigWrapper().GetVarValue('spectreScalingOptions', 'spectreHealthMultiplier'));
+	if (thePlayer.IsCiri())
+	{
+		return 0;
+	}
+	else
+	{
+		return StringToFloat(theGame.GetInGameConfigWrapper().GetVarValue('spectreScalingOptions', 'spectreHealthMultiplier'));
+	}
 }
 
 @addMethod(W3GameParams) function GetEnemyDamageMult() : float
 {
-	return StringToFloat(theGame.GetInGameConfigWrapper().GetVarValue('spectreScalingOptions', 'spectreDamageMultiplier'));
+	if (thePlayer.IsCiri())
+	{
+		return 0;
+	}
+	else
+	{
+		return StringToFloat(theGame.GetInGameConfigWrapper().GetVarValue('spectreScalingOptions', 'spectreDamageMultiplier'));
+	}
 }
 
 @addMethod(W3GameParams) function GetBossHealthMult() : float
 {
-	return StringToFloat(theGame.GetInGameConfigWrapper().GetVarValue('spectreScalingOptions', 'spectreBossHealthMultiplier'));
+	if (thePlayer.IsCiri())
+	{
+		return 0;
+	}
+	else
+	{
+		return StringToFloat(theGame.GetInGameConfigWrapper().GetVarValue('spectreScalingOptions', 'spectreBossHealthMultiplier'));
+	}
 }
 
 @addMethod(W3GameParams) function GetBossDamageMult() : float
 {
-	return StringToFloat(theGame.GetInGameConfigWrapper().GetVarValue('spectreScalingOptions', 'spectreBossDamageMultiplier'));
+	if (thePlayer.IsCiri())
+	{
+		return 0;
+	}
+	else
+	{
+		return StringToFloat(theGame.GetInGameConfigWrapper().GetVarValue('spectreScalingOptions', 'spectreBossDamageMultiplier'));
+	}
 }
 
 @addMethod(W3GameParams) function GetEnemyScalingOption() : int
@@ -329,11 +357,6 @@
 @addMethod(W3GameParams) function GetNoQuestLevels() : bool
 {
 	return (bool)(theGame.GetInGameConfigWrapper().GetVarValue('spectreExpOptions', 'spectreNoQuestLevels'));
-}
-
-@addMethod(W3GameParams) function GetspectreVersion() : float
-{
-	return StringToFloat(theGame.GetInGameConfigWrapper().GetVarValue('spectreGameplayOptions', 'spectreVersion'));
 }
 
 @addMethod(W3GameParams) function GetBoatSinkOption() : bool
@@ -485,14 +508,18 @@ var meleeSpecialCooldown : float;
 @addField(W3GameParams)  
 var instantCastingToggle : int;
 
-@addMethod(W3GameParams) function GetInstantCasting() : bool
+@addMethod(W3GameParams) function GetInstantCasting(): bool 
 {
-	if(instantCastingToggle == 0)
+	var configValue :int;
+	var configValueString : string;
+	
+	configValueString = spectreSettingsGetConfigValue('spectreGameplayOptions','spectreSignInstantCast');
+	configValue =(int) configValueString;
+
+	if(configValueString=="" || configValue<0)
 	{
-		if((bool)(theGame.GetInGameConfigWrapper().GetVarValue('spectreGameplayOptions', 'spectreSignInstantCast')))
-			instantCastingToggle = 2;
-		else
-			instantCastingToggle = 1;
+		return true;
 	}
-	return (instantCastingToggle > 1);
+	
+	else return (bool)configValueString;
 }

@@ -1,3 +1,77 @@
+@addField(CR4Game)
+public var alchexts : SpectreAlchemyExtensions; 
+
+@addField(CR4Game)
+public saved var spawnareas : array<S_SpawnArea>;
+
+@wrapMethod(CR4Game) function OnGameStarting(restored : bool )
+{
+	var diff : int;
+
+	if(false) 
+	{
+		wrappedMethod(restored);
+	}
+
+	SpectreAlchemyInitialize(this);
+
+	if(!restored)
+	{
+		
+		gameplayFacts.Clear();
+		gameplayFactsForRemoval.Clear();
+	}
+	
+	if (!FactsDoesExist("lowest_difficulty_used") || GetLowestDifficultyUsed() == EDM_NotSet)
+	{
+		SetLowestDifficultyUsed(GetDifficultyLevel());
+	}
+		
+	SetHoursPerMinute(0.25);	
+	SetTimescaleSources();
+	
+	
+	isDialogOrCutscenePlaying = false;
+
+	
+	params.Init();
+	
+	
+	witcherLog = new W3GameLog in this;
+			
+	InitGamerProfile();
+		
+	
+	damageMgr = new W3DamageManager in this;
+
+	tooltipSettings = LoadCSV("gameplay\globals\tooltip_settings.csv");
+	minimapSettings = LoadCSV("gameplay\globals\minimap_settings.csv"); 
+	LoadHudSettings();
+	playerStatisticsSettings = LoadCSV("gameplay\globals\player_statistics_settings.csv"); 
+				
+	LoadQuestLevels( "gameplay\globals\quest_levels.csv" );		 
+	
+	expGlobalModifiers = LoadCSV("gameplay\globals\exp_mods.csv"); 
+	expGlobalMod_kills = StringToFloat( expGlobalModifiers.GetValueAt(0,0) );
+	expGlobalMod_quests = StringToFloat( expGlobalModifiers.GetValueAt(1,0) );
+	
+	InitializeEffectManager();
+
+	envMgr = new W3EnvironmentManager in this;
+	envMgr.Initialize();
+	
+	runewordMgr = new W3RunewordManager in this;
+	runewordMgr.Init();
+	
+	theGame.RequestPopup( 'OverlayPopup' );
+	
+	theSound.Initialize();	
+	if(IsLoadingScreenVideoPlaying())
+	{
+		theSound.EnterGameState(ESGS_Movie);
+	}
+}
+
 @addMethod(CR4Game) function spectreUserSettingsScaling() 
 {
 	var i : int;
