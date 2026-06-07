@@ -201,10 +201,10 @@ The above keybinds will correlate to these buttons/actions in-game:
 	L				L2 + R3		-> Hold ~0.5 seconds and release to enter the meditation position AND build a fire.
 	L				R3			-> while on the meditation position, tap to enter the alchemy menu.
 	L				R3			-> while on the meditation position, hold to stand up.
-	Space			R2			-> while on the meditation position, hold to accelerate time.
-	R mouse		Digit Up	        -> while in the alchemy menu, opens the menu to choose another ingredient.
-	L mouse				        -> while in the alchemy menu, click on an ingredient to display its information.
-	Shift						-> Hold while using the R Mouse/Y button when at an alchemist to buy an ingredient.
+	Space				R2			-> while on the meditation position, hold to accelerate time.
+	R mouse			Digit Up	       	-> while in the alchemy menu, opens the menu to choose another ingredient.
+	L mouse					     	-> while in the alchemy menu, click on an ingredient to display its information.
+	Shift							-> Hold while using the R Mouse/Y button when at an alchemist to buy an ingredient.
 	Dot				R2			-> Tap inside the alchemy menu to only show ingredients of a particular secondary substance.
 	Comma			L2			-> Same as above, but goes to the previous substance.
 
